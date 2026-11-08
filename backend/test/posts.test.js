@@ -126,3 +126,12 @@ test('DELETE /api/posts/:id responde 400 con un id inválido', async () => {
     assert.equal(res.status, 400, `id "${id}"`);
   }
 });
+
+test('una ruta desconocida bajo /api responde 404 en JSON', async () => {
+  const app = createApp({ postsRepository: fakeRepository() });
+
+  const res = await request(app).get('/api/no-existe');
+
+  assert.equal(res.status, 404);
+  assert.deepEqual(res.body, { error: 'Ruta no encontrada' });
+});
