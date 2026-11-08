@@ -1,0 +1,19 @@
+# Dependencias (se reinstalan con npm install)
+node_modules/
+
+# Build del frontend
+dist/
+backend/public/
+
+# Datos del Postgres local
+.pgdata/
+
+# Variables de entorno con secretos
+.env
+.env.*
+!.env.example
+
+# Logs y sistema
+*.log
+.DS_Store
+Thumbs.db
