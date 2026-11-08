@@ -1,0 +1,8 @@
+# Lo que no entra al contexto de build: más rápido y sin secretos en la imagen.
+**/node_modules
+**/.env
+**/.pgdata
+backend/public
+frontend/dist
+infra
+.git

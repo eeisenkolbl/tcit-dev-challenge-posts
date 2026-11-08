@@ -16,3 +16,13 @@ output "db_password_secret_id" {
   description = "ID del secreto en Secret Manager con la contraseña de db_user"
   value       = google_secret_manager_secret.db_password.secret_id
 }
+
+output "image_repository" {
+  description = "Prefijo de la imagen para gcloud builds submit --tag"
+  value       = local.image_repository
+}
+
+output "service_url" {
+  description = "URL pública de la app en Cloud Run"
+  value       = google_cloud_run_v2_service.app.uri
+}
